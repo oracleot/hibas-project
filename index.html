@@ -1,38 +1,335 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Hiba Project</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hiba Project</title>
 </head>
+<style>
+    .container {
+        width: 900px;
+        margin: 0 auto;
+        align-items: center;
+    }
+    
+    button {
+        border: 1px solid green
+    }
+    
+    input {
+        border: 1px solid green
+    }
+    
+    .house-type-menu {
+        margin: 10px auto;
+    }
+    
+    .house-type-menu li {
+        display: inline-block;
+        padding: 10px;
+    }
+    
+    .left-side {
+        width: 200px
+    }
+    
+    .wide-direction {
+        display: flex;
+        justify-content: space-around
+    }
+    
+    .active-tab {
+        color: greenyellow
+    }
+</style>
+
 <body>
-  <section id='what-house' style='background-color: yellow'>
-    <h1>What house do you live?</h1>
-    <ul>
-      <li id='apartment'>Apartment</li>
-      <li id='house'>House</li>
-      <li id='flat'>Flat</li>
-    </ul>
-  </section>
-
-  <section id='house-types' style='background-color: blue'>
-    <ul class='menu-tabs'>
-      <li class='menu-tab'>tab1</li>
-      <li class='menu-tab'>tab2</li>
-      <li class='menu-tab'>tab3</li>
-    </ul>
-
-    <section id='heizing'>
-      <h3>Heizing</h3>
-      <button id='heizing_btn'>next</button>
+    <section id='what-house' style='background-color: indigo'>
+        <h1>What house do you live?</h1>
+        <ul>
+            <li id='apartment'>Apartment</li>
+            <li id='house'>House</li>
+            <li id='flat'>Flat</li>
+        </ul>
     </section>
 
-    <section id='storm'>
-      <h3>Storm</h3>
-    </section>
-  </section>
+    <section id='house-types' style='background-color: teal'>
+        <ul class='menu-tabs'>
+            <li class='menu-tab-0'>heating</li>
+            <li class='menu-tab-1'>storm</li>
+            <li class='menu-tab-2'>mobilititat</li>
+            <li class='menu-tab-3'>flugen</li>
+            <li class='menu-tab-4'>emahuring</li>
+            <li class='menu-tab-5'>konsum</li>
+            <li class='menu-tab-6'>co2-austoz</li>
+        </ul>
 
-  <script src='./app.js'></script>
+        <section id='heizing'>
+            <h3>Heizing</h3>
+            <ul class='menu-tabs house-type-menu'>
+                <li class=" left-side"><label for="houstype">Haustyp:</label></li>
+                <li><input type="text"></li>
+            </ul>
+            <ul class="house-type-menu ">
+                <li class=" left-side"><label for="houstype">Anzahl Personen im Haushalt:</label></li>
+                <li><input type="number" onChange="changePerHouse"></li>
+
+            </ul>
+            <ul class="house-type-menu ">
+                <li class=" left-side"><label for="houstype">Wohnfläche in m2:</label></li>
+                <li><input type="text"></li>
+
+            </ul>
+            <ul class="house-type-menu ">
+                <li class=" left-side"><label for="houstype">Art der Heizung:</label></li>
+                <li><input type="option"></li>
+
+            </ul>
+            <ul class="house-type-menu ">
+                <li class=" left-side"><label for="houstype">Jahresverbrauch bekannt?</label></li>
+                <li><button>ja</button><button>nein</button></li>
+
+            </ul>
+            <ul class="house-type-menu ">
+                <li class=" left-side"><label for="houstype">Jahresverbrauch:</label></li>
+                <li><input type="text"></li>
+
+            </ul>
+            <ul class="house-type-menu ">
+                <li class=" left-side"><label for="houstype">Co2
+            Austoß durchs heizen:</label></li>
+                <li><input type="text"></li>
+
+            </ul>
+            <ul class="house-type-menu ">
+                <li class=" left-side"><label for="houstype"></label></li>
+                <li><button id='heizing_btn'>Weiter zu Strom</button></li>
+            </ul>
+        </section>
+
+        <section id='storm'>
+            <h3>Storm</h3>
+            <ul class="house-type-menu">
+                <li class="left-side"><label for="personNum">Anzahl Personen im Haushalt:</label></li>
+                <li><input type="text"></li>
+            </ul>
+            <ul class="house-type-menu">
+                <li class="left-side"><label for="personNum">Art des Strom</label></li>
+                <li><button>Storm-Mix</button><button>Okostrom</button></li>
+            </ul>
+            <ul class="house-type-menu">
+                <li class="left-side"><label for="personNum">Jahresverbrauch bekannt?</label></li>
+                <li><button>ja</button><button>nein</button></li>
+            </ul>
+            <ul class="house-type-menu">
+                <li class="left-side"><label for="personNum">Jahresverbrauch:</label></li>
+                <li><input type="text"></li>
+            </ul>
+            <ul class="house-type-menu">
+                <li class="left-side"><label for="personNum">Co2
+            Austoß Stromverbrauch</label></li>
+                <li><input type="text"></li>
+            </ul>
+            <ul class="house-type-menu">
+                <li class="left-side"><label for="personNum">Vorläufiger Gesamt
+            Co2 Austoß</label></li>
+                <li><input type="text"></li>
+            </ul>
+            <ul class="house-type-menu ">
+                <li class=" left-side"><label for="houstype"></label></li>
+                <li><button id='storm_btn'>Weiter zu Mobilität</button></li>
+            </ul>
+        </section>
+        <section id='mobiltat'>
+            <h3>Mobilität</h3>
+            <ul class="house-type-menu">
+                <li class="left-side"><label for="">Bezeichnung Fahrzeugtyp:</label></li>
+                <li><input type="text"></li>
+            </ul>
+            <ul class="house-type-menu">
+                <li class="left-side"><label for="">Art des Fahrzeugs:</label></li>
+                <li><input type="option"></li>
+            </ul>
+            <ul class="house-type-menu">
+                <li class="left-side"><label for="">Kraftstoff:</label></li>
+                <li><input type="option"></li>
+            </ul>
+            <ul class="house-type-menu">
+                <li class="left-side"><label for="">Jahresverbrauch bekannt?</label></li>
+                <li><button>Ja</button><button>Nein</button></li>
+            </ul>
+            <ul class="house-type-menu">
+                <li class="left-side"><label for="">Jahresverbrauch:</label></li>
+                <li><input type="text"></li>
+            </ul>
+            <ul class="house-type-menu">
+                <li class="left-side"><label for="">Jährliche Fahrleistung:</label></li>
+                <li><input type="text"></li>
+            </ul>
+            <ul class="house-type-menu">
+                <li class="left-side"><label for="">Co2
+              Austoß Autofahren</label></li>
+                <li><input type="text"></li>
+            </ul>
+            <ul class="house-type-menu">
+                <li class="left-side"><label for="">Vorläufiger Gesamt
+              Co2 Austoß</label></li>
+                <li><input type="text"></li>
+            </ul>
+            <ul class="house-type-menu">
+                <li class="left-side"><label for=""></label></li>
+                <li><button id='flug_btn'>Weiter zu Flugreisen</button></li>
+            </ul>
+        </section>
+        <section id="flug">
+            <h3>Flugreisen</h3>
+            <ul class="house-type-menu">
+                <li class="left-side"><label for="flug">Flugreisen Europa</label></li>
+                <li><input type="text"><label for="hours/year"></label></li>
+            </ul>
+            <ul class="house-type-menu">
+                <li class="left-side"><label for="klass">Flugklasse</label></li>
+                <li>
+                    <button>Economy</button>
+                    <button>Business</button>
+                    <button>First</button>
+                </li>
+            </ul>
+            <ul class="house-type-menu">
+                <li class="left-side"><label for="flug">Flugreisen Transkontinental</label></li>
+                <li><input type="text"><label for="hours/year"></label></li>
+            </ul>
+            <ul class="house-type-menu">
+                <li class="left-side"><label for="klass">Flugklasse</label></li>
+                <li>
+                    <button>Economy</button>
+                    <button>Business</button>
+                    <button>First</button>
+                </li>
+            </ul>
+            <ul class="house-type-menu">
+                <li class="left-side"><label for="flug">Co2
+Austoß Flugreisen</label></li>
+                <li><input type="text"></li>
+            </ul>
+            <ul class="house-type-menu">
+                <li class="left-side"><label for="flug">Gesamt
+Co2 Austoß</label></li>
+                <li><input type="text"></li>
+            </ul>
+            <ul class="house-type-menu">
+                <li class="left-side"><label for=""></label>
+                </li>
+                <li><button id="ernährung-btn">Weiter zu
+            Ernährung</button></li>
+            </ul>
+        </section>
+        <section id="ernährung">
+            <h3>Ernährung</h3>
+
+            <div class="wide-direction">
+                <div>
+                    <p>Meine Person</p>
+                    <ul class="house-type-menu">
+                        <li> <label for="">In bin:</label> </li>
+                        <li>
+                            <button>Mann</button>
+                            <button>Frau</button>
+                            <button>Kaine</button></li>
+                    </ul>
+                    <ul class="house-type-menu">
+                        <li> <label for="">Gewicht:</label> </li>
+                        <li>
+                            <input type="text">
+                    </ul>
+                    <ul class="house-type-menu">
+                        <li> <label for="">Alter:</label> </li>
+                        <li>
+                            <button>Bis 17 Jahre</button>
+                            <button>18
+                                  29 Jahre</button>
+                            <button>30
+                                  59 Jahre</button>
+                            <button>60 Jahre +</button>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <ul class="house-type-menu">
+                        <li> <label for="ernährungsform:">Ernährungsform:</label></li>
+                        <li><select name="" id=""></select></li>
+                    </ul>
+                    <ul class="house-type-menu">
+                        <li> <label for="ernährungsform:">Ernährungsform:</label></li>
+                        <li><select name="" id=""></select></li>
+                    </ul>
+                    <ul class="house-type-menu">
+                        <li> <label for="ernährungsform:">Ernährungsform:</label></li>
+                        <li><select name="" id=""></select></li>
+                    </ul>
+                    <ul class="house-type-menu">
+                        <li> <label for="ernährungsform:">Ernährungsform:</label></li>
+                        <li><select name="" id=""></select></li>
+                    </ul>
+                    <ul class="house-type-menu">
+                        <li> <label for="ernährungsform:">Ernährungsform:</label></li>
+                        <li><select name="" id=""></select></li>
+                    </ul>
+
+                    <ul class="house-type-menu">
+                        <li class="left-side"><label for="ernährungsform">Gesamt
+                                    Co2 Austoß</label></li>
+                        <li><input type="text"></li>
+                    </ul>
+                    <ul class="house-type-menu">
+                        <li class="left-side"><label>Vorläufiger Gesamt
+                                    Co2 Austoß</label></li>
+                        <li><input type="text" name="" id=""></li>
+                        <li><button id="konsum-btn">Weiter zu
+                                    weiterer Konsum</button></li>
+                    </ul>
+                </div>
+            </div>
+
+        </section>
+        <section id="konsum">
+            <h3>Weiterer Konsum</h3>
+            <ul>
+                <li><label>Wie ist dein
+Kaufverhalten?</label></li>
+                <li>
+                    <button>S
+parsam</button>
+                    <button>Durchschnittlich</button>
+                    <button>Großzügig</button>
+                </li>
+            </ul>
+            <ul>
+                <li><label>Was sind deine Kaufkriterien?</label></li>
+                <li><button>Langlebigkeit</button>
+                    <button>Funktionalität</button>
+                    <button>Günstigster Preis</button></li>
+            </ul>
+            <ul>
+                <li><label>Was sind deine Kaufkriterien?</label></li>
+                <li><button>Langlebigkeit</button>
+                    <button>Funktionalität</button>
+                    <button>Günstigster Preis</button></li>
+            </ul>
+            <ul>
+                <li><label>Was sind deine Kaufkriterien?</label></li>
+                <li><button>Langlebigkeit</button>
+                    <button>Funktionalität</button>
+                    <button>Günstigster Preis</button>
+                    <button>4 Wochen +</button>
+                </li>
+            </ul>
+        </section>
+    </section>
+
+    <script src='./app.js'></script>
 </body>
+
 </html>
