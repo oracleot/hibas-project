@@ -64,8 +64,11 @@ konsumBtn.addEventListener("click", function () {
   konsum.style.display = "block";
 });
 
-function changePerHouse(value) {
-  let person = 0;
-  return person.push(value);
-}
+const changePerHouse = () => {
+  let numPerson = document
+    .getElementById("changePerHouse")
+    .addEventListener("change", function () {
+      numPerson.style.display = "none";
+    });
+};
 changePerHouse();
