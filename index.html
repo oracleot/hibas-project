@@ -13,33 +13,33 @@
         margin: 0 auto;
         align-items: center;
     }
-    
+
     button {
         border: 1px solid green
     }
-    
+
     input {
         border: 1px solid green
     }
-    
+
     .house-type-menu {
         margin: 10px auto;
     }
-    
+
     .house-type-menu li {
         display: inline-block;
         padding: 10px;
     }
-    
+
     .left-side {
         width: 200px
     }
-    
+
     .wide-direction {
         display: flex;
         justify-content: space-around
     }
-    
+
     .active-tab {
         color: greenyellow
     }
@@ -70,11 +70,13 @@
             <h3>Heizing</h3>
             <ul class='menu-tabs house-type-menu'>
                 <li class=" left-side"><label for="houstype">Haustyp:</label></li>
-                <li><input type="text"></li>
+                <li><input type="text" onchange="changePerHouse"></li>
             </ul>
             <ul class="house-type-menu ">
                 <li class=" left-side"><label for="houstype">Anzahl Personen im Haushalt:</label></li>
-                <li><input type="number" onChange="changePerHouse"></li>
+                <li>
+                  <input id="heizing-people-num" type="number">
+                </li>
 
             </ul>
             <ul class="house-type-menu ">
@@ -113,7 +115,7 @@
             <h3>Storm</h3>
             <ul class="house-type-menu">
                 <li class="left-side"><label for="personNum">Anzahl Personen im Haushalt:</label></li>
-                <li><input type="text"></li>
+                <li><input type="text" id="storm-people-num"></li>
             </ul>
             <ul class="house-type-menu">
                 <li class="left-side"><label for="personNum">Art des Strom</label></li>
@@ -328,6 +330,7 @@ parsam</button>
             </ul>
         </section>
     </section>
+
 
     <script src='./app.js'></script>
 </body>

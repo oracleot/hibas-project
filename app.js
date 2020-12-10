@@ -42,6 +42,7 @@ heizingBtn.addEventListener("click", function () {
   heatingTab.style.color = "grey";
   stormgTab.style.color = "yellow";
 });
+
 stormBtn.addEventListener("click", function () {
   storm.style.display = "none";
   mobiltat.style.display = "block";
@@ -49,23 +50,31 @@ stormBtn.addEventListener("click", function () {
   stormgTab.style.color = "grey";
   mobilitatTab.style.color = "yellow";
 });
+
 flugBtn.addEventListener("click", function () {
   storm.style.display = "none";
   mobiltat.style.display = "none";
 
   flug.style.display = "block";
 });
+
 ernährungBtn.addEventListener("click", function () {
   flug.style.display = "none";
   ernährung.style.display = "block";
 });
+
 konsumBtn.addEventListener("click", function () {
   ernährung.style.display = "none";
   konsum.style.display = "block";
 });
 
 function changePerHouse(value) {
-  let person = 0;
-  return person.push(value);
+  console.log(value)
 }
-changePerHouse();
+
+let heizingPeopleNum = document.getElementById("heizing-people-num");
+let stormPeopleNum = document.getElementById("storm-people-num");
+
+heizingPeopleNum.onchange = function(e) {
+  stormPeopleNum.value = e.target.value;
+}
