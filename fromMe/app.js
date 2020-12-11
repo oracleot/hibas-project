@@ -13,6 +13,7 @@ function hideAllSection() {
   toggleSection("nutration", "none");
   toggleSection("houses", "none");
   toggleSection("storjjfjdf", "none");
+  toggleSection("car-after-zero", "none");
 }
 function toggleSection(id, displayOpt) {
   document.getElementById(id).style.display = displayOpt;
@@ -58,9 +59,9 @@ let mobilitatPrevBtn = document.querySelector("#mobilitat-prev-btn");
 let HouseTypeInput = document.querySelector("#houseType");
 let numPerson = document.getElementById("numOfPer");
 let stormPerson = document.getElementById("stor-per");
+let carNumber = document.getElementById("num-car");
+let afterZeroCar = document.getElementById("car-after-zero");
 reihenhaus.addEventListener("click", () => goToSection("heizing"));
-// wohnung.addEventListener("click", () => goToSection("heizing"));
-// einfamilienhaus.addEventListener("click", () => goToSection("heizing"));
 heizingNextBtn.addEventListener("click", () => goToSection("storm"));
 stormNextBtn.addEventListener("click", () => goToSection("mobilitat"));
 stormPrevBtn.addEventListener("click", () => goToSection("heizing"));
@@ -68,11 +69,21 @@ mobilitatPrevBtn.addEventListener("click", () => goToSection("storm"));
 einfamilienhaus.addEventListener("click", function () {
   HouseTypeInput.innerText.value === parahousReihouse.innerText.value;
 });
-numPerson.onchange = function (e) {
-  stormPerson.value = e.target.value;
-};
+
 numPerson.addEventListener("change", function (e) {
   stormPerson.value = e.target.value;
   console.log(e);
 });
+function carNumberInput(value) {
+  carNumber.on("change", function (value) {});
+}
+
+carNumber.addEventListener("change", function () {
+  if (carNumber.value === 0) {
+    afterZeroCar.style.display = "none";
+  } else if (carNumber.value > 0) {
+    afterZeroCar.style.display = "block";
+  }
+});
+
 startApp();
