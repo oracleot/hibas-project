@@ -68,24 +68,13 @@ konsumBtn.addEventListener("click", function () {
   konsum.style.display = "block";
 });
 
-<<<<<<< HEAD
-const changePerHouse = () => {
-  let numPerson = document
-    .getElementById("changePerHouse")
-    .addEventListener("change", function () {
-      numPerson.style.display = "none";
-    });
-};
-changePerHouse();
-=======
 function changePerHouse(value) {
-  console.log(value)
+  console.log(value);
 }
 
 let heizingPeopleNum = document.getElementById("heizing-people-num");
 let stormPeopleNum = document.getElementById("storm-people-num");
 
-heizingPeopleNum.onchange = function(e) {
+heizingPeopleNum.onchange = function (e) {
   stormPeopleNum.value = e.target.value;
-}
->>>>>>> 4ef125d408cebd2538c3d33ce76e6e5e90d01580
+};

@@ -15,7 +15,7 @@
         <section id="intro" class="text-center mt-5">
             <ul class="d-flex justify-content-between py-5">
                 <li class="intro-menu" id="reihenhaus"><img src="../revamp/assets/img/house-icon.png" alt="">
-                    <p class="lead">house</p>
+                    <p class="lead" id="hous-reihouse">house</p>
                 </li>
 
                 <li class="intro-menu" id="einfamilienhaus"><img src="../revamp/assets/img/house-icon.png" alt="">
@@ -43,10 +43,47 @@
 
             <section id="heizing" class="mt-4">
                 <h1>Heizing</h1>
+                <ul class="navigation">
+                    <li><label for="house-type">House type</label></li>
+                    <li><input type="text" id="houseType"></li>
+                </ul>
+                <ul class="navigation">
+                    <li><label for="house-type">person ber house</label></li>
+                    <li><input type="text" id="numPerson"></li>
+                </ul>
+                <ul class="navigation">
+                    <li><label for="house-size">size in m2</label></li>
+                    <li><input type="text" id="houseSize"></li>
+                </ul>
+                <ul class="navigation">
+                    <li><label for="house-type">person ber house</label></li>
+                    <li><input type="text" id="hou"></li>
+                </ul>
+                <ul class="navigation">
+                    <li><label for="hizung-type">hizung type</label></li>
+                    <li><select type="text" id="hizungType">
+                        <option value="hizungType">gaz</option>
+                        <option value="hizungType">green</option>
+                        <option value="hizungType">wood</option>
+                        <option value="hizungType">wind</option>
+                        <option value="hizungType">petrol</option>
+
+                        <select>
+                    </li>
+                </ul>
+                 <ul class="navigation">
+                    <li><label for="person-num">person ber house</label></li>
+                    <li><input type="text" id="numOfPer" value="num-person"></li>
+                </ul>
+                 <ul class="navigation">
+                    <li><label for="house-type">person ber house</label></li>
+                    <li><input type="text" id="numPer"></li>
+                </ul>
                 <button id="heizing-next-btn">Next</button>
             </section>
             <section id="storm" class="mt-4">
                 <h1>storm</h1>
+                <input type="text" id="stor-per">
                 <button id="storm-next-btn">Next</button>
                 <button id="storm-prev-btn">prev</button>
             </section>
