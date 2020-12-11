@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="assets/styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container">
+    <section id="intro" class="text-center mt-5">
+      <h1>In welchem Haustyp lebst du?</h1>
+      <ul class="d-flex justify-content-between py-5">
+        <li class="intro-menu" id="reihenhaus">
+          <img src="assets/img/house-icon.png" alt="Reihenhaus">
+          <p class="lead">Reihenhaus</p>
+        </li>
+        <li class="intro-menu" id="einfamilienhaus">
+          <img src="assets/img/house-icon.png" alt="Einfamilienhaus">
+          <p class="lead">Einfamilienhaus</p>
+        </li>
+        <li class="intro-menu" id="wohnung">
+          <img src="assets/img/house-icon.png" alt="Wohnung">
+          <p class="lead">Wohnung</p>
+        </li>
+      </ul>
+    </section>
+
+    <div id="main-app" class='app-container'>
+      <div id="pointer"></div>
+      <ul class="navigation mt-4">
+        <li class="nav-item">Hiezung</li>
+        <li class="nav-item">Strom</li>
+        <li class="nav-item">Mobilität</li>
+        <li class="nav-item">Flugreisen</li>
+        <li class="nav-item">Strom</li>
+        <li class="nav-item">Mobilität</li>
+        <li class="nav-item">Flugreisen</li>
+      </ul>
+
+      <section id="heizing" class="mt-4">
+        <h1>Heizing</h1>
+        <button id="heizing-next-btn">Next</button>
+      </section>
+
+      <section id="strom" class="mt-4">
+        <h1>Strom</h1>
+        <button id="strom-next-btn">Next</button>
+        <button id="strom-prev-btn">Prev</button>
+      </section>
+
+      <section id="mobilitat" class="mt-4">
+        <h1>Mobilität</h1>
+        <button id="mobilitat-next-btn">Next</button>
+        <button id="mobilitat-prev-btn">Prev</button>
+      </section>
+    </div>
+  </div>
+
+  <script src='assets/app.js'></script>
+</body>
+</html>
